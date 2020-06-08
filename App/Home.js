@@ -1,10 +1,5 @@
 import * as React from 'react';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-// import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-import { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, Text, View } from 'react-native';
+import {Text, View } from 'react-native';
 import axios from 'axios';
 
 const url = 'https://api.imgur.com/3/gallery/search/{{sort}}/{{window}}/{{page}}?q=cats'

@@ -6,7 +6,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Home from './Home';
 import OAuth from './OAuth';
-import Test from './test'
+// import Test from './test'
 
 function HomePage() {
   return (
@@ -19,7 +19,7 @@ function HomePage() {
 function Profile() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text> <OAuth/></Text>
+        <OAuth/> 
     </View>
   );
 }
