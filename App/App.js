@@ -5,9 +5,10 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Home from './Home';
-import OAuth from './OAuth'
+import OAuth from './OAuth';
+import Test from './test'
 
-function Feed() {
+function HomePage() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Home/>
@@ -18,7 +19,7 @@ function Feed() {
 function Profile() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text><OAuth /></Text>
+      <Text> <OAuth/></Text>
     </View>
   );
 }
@@ -36,7 +37,7 @@ const Tab = createMaterialBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Feed"
+      initialRouteName="HomePage"
       activeColor="#F7FAFA"
       inactiveColor="#1F3451"
       barStyle={{ backgroundColor: '#5B738F' }}
@@ -44,8 +45,8 @@ function MyTabs() {
       style={{ backgroundColor: '#7AC3B0' }}
     >
       <Tab.Screen
-        name="Feed"
-        component={Feed}
+        name="HomePage"
+        component={HomePage}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (

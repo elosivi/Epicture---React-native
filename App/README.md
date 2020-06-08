@@ -1,10 +1,10 @@
 
-# what is this app?
+# 1- What is this app?
 This cross-platform / mobile app was dev by Elodie Barbe during the codacademy by Epitech, @2020
 It was dev in React-native
 This app is connected with the Imgur API
 
-# before to run, install npm+expo packages & modules
+# 2- Before to run, install npm+expo packages & modules
 
 >>>npm install
 then, answer yes:
@@ -16,9 +16,9 @@ if needed:
 >>> yarn add expo
 >>>expo install ...
 
----
 
-# to run the app
+
+# 3-To run the app
 
 **1. on android device**
 open android studio

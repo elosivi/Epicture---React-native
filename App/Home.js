@@ -26,7 +26,7 @@ export default class ImgRequests extends React.Component {
      const {imgList} = this.state;
      return (
          <View>
-      
+            <Text>Home page</Text>
             { 
             imgList.map(img => <Text>{img.title}</Text>)
             }

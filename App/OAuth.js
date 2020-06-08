@@ -5,6 +5,25 @@ import { makeRedirectUri, useAuthRequest } from 'expo-auth-session';
 import { View, Text } from "react-native";
 import { Button } from 'react-native';
 
+export default class ImgRequests extends React.Component {
+  state = {
+    login: []
+  }
+
+
+
+  render() {
+   return (
+       <View>
+          <Text>Profile page</Text>
+
+      </View>
+    )
+  }
+}
+
+// TO TEST
+
 // WebBrowser.maybeCompleteAuthSession();
 
 // Endpoint
@@ -14,16 +33,16 @@ import { Button } from 'react-native';
 //   revocationEndpoint: 'https://api.coinbase.com/oauth/revoke',
 // };
 
-export default function OAuth() {
+// export default function OAuth() {
 
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>EPICTURE</Text>
-    </View>
-  );
-}
+//   return (
+//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//       <Text>profile</Text>
+//     </View>
+//   );
+// }
 
-// TO TEST
+
 // export default function OAuth() {
 //   const [request, response, promptAsync] = useAuthRequest(
 //     {
