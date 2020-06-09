@@ -31,29 +31,3 @@ export default class ImgRequests extends React.Component {
     }
   }
 
-// =========================== T E S T ==================================== //
-// const auth:"0e5e6710ac6c131800f1dbc844a6f8759187b78b"
-// export default function Home() {
-
-//     function getImgFromImgur() {
-//         return fetch('https://reactnative.dev/picture.json',{
-//             method: 'GET',
-//             headers: {
-//                 Authorization : auth
-//             })
-//           .then((response) => response.json())
-//           .then((json) => {
-//             return json.picture;
-//           })
-//           .catch((error) => {
-//             console.error(error);
-//           });
-//       }
-
-//         return (
-//             <View>
-//                 <Text>All images</Text>
-//             </View>
-//           );
-    
-// }

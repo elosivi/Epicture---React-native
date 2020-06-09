@@ -24,10 +24,10 @@ function Profile() {
   );
 }
 
-function Notifications() {
+function Favorites() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>view 2 !</Text>
+      <Text>My favorites</Text>
     </View>
   );
 }
@@ -55,8 +55,8 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="Favorites"
+        component={Favorites}
         options={{
           tabBarLabel: 'Option2',
           tabBarIcon: ({ color }) => (
