@@ -4,13 +4,11 @@ import * as AuthSession from 'expo-auth-session';
 import { getRedirectUrl, useAuthRequest, } from 'expo-auth-session';
 import { StyleSheet, View, Text, ImageBackground, Dimensions } from "react-native";
 import { Button } from 'react-native-elements';
-// import * as SecureStore from 'expo-secure-store';
-
 
 import bgImage from './img/background.jpg';
 const { width : WIDTH} = Dimensions.get('window');
 
-const MY_SECURE_AUTH_STATE_KEY = 'MySecureAuthStateKey';
+// const MY_SECURE_AUTH_STATE_KEY = 'MySecureAuthStateKey';
 WebBrowser.maybeCompleteAuthSession();
 AuthSession.makeRedirectUri({ useProxy: true })
 
@@ -32,7 +30,6 @@ export default function OAuth() {
   );
 
   React.useEffect(() => {
-    // if (response?.type === 'success') {
     if (response && response.type === 'success') {
       //Oauth2
       const { code } = response.params;
@@ -42,12 +39,6 @@ export default function OAuth() {
       const auth = response.params;
       const storageValue = JSON.stringify(auth);
       console.log("===>OAUth.js/React.useEffect ===> get storageValue: ", storageValue)
-
-        if (Platform.OS !== 'web') {
-          SecureStore.setItemAsync(MY_SECURE_AUTH_STATE_KEY, storageValue);
-          
-
-        }
       }
   }, [response]);
 
@@ -61,8 +52,9 @@ export default function OAuth() {
             disabled={!request}
             title="Login with Imgur"
             onPress={() => {
-              alert (getRedirectUrl());
+              // alert (getRedirectUrl());
               promptAsync({useProxy: true});
+              // alert(storageValue)
               }}
           /> 
         </View>

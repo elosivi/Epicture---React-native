@@ -3,6 +3,8 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Header } from 'react-native-elements';
+import LinearGradient from 'react-native-linear-gradient';
 
 import Home from './Home';
 import OAuth from './OAuth';
@@ -58,7 +60,7 @@ function MyTabs() {
         name="Favorites"
         component={Favorites}
         options={{
-          tabBarLabel: 'Option2',
+          tabBarLabel: 'Favorites',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="heart" color={color} size={26} />
           ),
@@ -68,7 +70,7 @@ function MyTabs() {
         name="Profile"
         component={Profile}
         options={{
-          tabBarLabel: 'Option3',
+          tabBarLabel: 'My Profile',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="account" color={color} size={26} />
           ),
@@ -80,8 +82,18 @@ function MyTabs() {
 
 export default function Nav() {
   return (
+  //   <Header
+  // ViewComponent={LinearGradient} // Don't forget this!
+  // linearGradientProps={{
+  //   colors: ['red', 'pink'],
+  //   start: { x: 0, y: 0.5 },
+  //   end: { x: 1, y: 0.5 },
+  // }}
+// />
+   
     <NavigationContainer>
       <MyTabs />
     </NavigationContainer>
+   
   );
 }
