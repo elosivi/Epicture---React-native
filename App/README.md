@@ -4,9 +4,31 @@ This cross-platform / mobile app was dev by Elodie Barbe during the codacademy b
 It was dev in React-native<br/>
 This app is connected with the Imgur API
 
+(It was my first mobile app  and my 1st work in react native, I never use this technology before this project. We had 8 days to discover the environement, the doc, the api Imgur, and how use the the OAuth2 specifically with this API)
+
 # 2- Fonctionalities <br/>
+
+**OK**
+( in 8 days)
 Login with Imgur API
-Get data from API
+Get data from API : render some photos and infos
+Navigate with a navbar
+Add some design
+
+![alt text](https://github.com/elosivi/Epicture/blob/App/img/View_Profile.PNG?raw=true)
+![alt text](https://github.com/elosivi/Epicture/blob/App/img/authExpo.PNG?raw=true)
+![alt text](https://github.com/elosivi/Epicture/blob/App/img/authExpo2.PNG?raw=true)
+![alt text](https://github.com/elosivi/Epicture/blob/App/img/renderList.PNG?raw=true)
+
+**In progress**
+Stock token and other data in asyncStorage (or other localstorage) 
+Render user profile info |in Profile
+Render user's favorites img | in MyFavorites
+Search a photo by name |in Home
+Add photo in our favorites | in Home
+Upload a new picture | in Profile
+Logout | in Profile
+
 
 # 3- dev schema & tools
 ## Expo / npm / react essentials modules used

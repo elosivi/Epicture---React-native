@@ -81,9 +81,9 @@ export default class Myfavorites extends React.Component {
       return (
         <ScrollView>
          <View>
-            <Text h1>Home page</Text>
+            <Text style={styles.pagetitle}>My favorites</Text>
             {/* <View>{images}</View> */}
-            <Text>(end of list)</Text>
+            
         </View>
         </ScrollView>
       )
@@ -102,6 +102,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#1F3451",
     borderColor:'#5B738F',
     borderWidth:1,
+  },
+  pagetitle:{
+    marginTop:20, 
+    width: WIDTH, 
+    textAlign:'center', 
+    height:'50', 
+    backgroundColor:'#56BFC0',
   },
   title:{
     fontSize:20,

@@ -7,6 +7,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Home from './Home';
 import OAuth from './OAuth';
+import Myfavorites from './Myfavorites';
 
 function HomePage() {
   return (
@@ -28,6 +29,7 @@ function Favorites() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>My favorites</Text>
+      {/* <Myfavorites/> */}
     </View>
   );
 }
