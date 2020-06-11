@@ -1,64 +1,102 @@
 import * as React from 'react';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-// import { MaterialCommunityIcons } from '@expo/vector-icons';
-
-import { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, Text, View } from 'react-native';
+import {Text, View } from 'react-native';
 import axios from 'axios';
+import { ActivityIndicator,Dimensions,StyleSheet } from 'react-native';
+import { Image } from 'react-native-elements';
 
-const url = 'https://api.imgur.com/3/gallery/search/{{sort}}/{{window}}/{{page}}?q=cats'
+
+
+const url = 'https://api.imgur.com/3/gallery/search/day/1?q=cats'
+const { width : WIDTH} = Dimensions.get('window');
 
 export default class ImgRequests extends React.Component {
-    state = {
+  constructor(props) {
+    super(props);
+    this.state = {
       imgList: []
     }
+  }
   
-    componentDidMount() {
-      axios.get('url')
+    componentDidMount(){
+      axios.get(
+        url,
+        {
+        headers:{
+          Authorization:'Client-ID 0fa8ab9c054485e',
+          Accept:'*/*',
+        },
+       }) 
         .then(res => {
-          const imgList = res.data;
-          this.setState({ imgList });
+          this.setState({ imgList: res.data.data });
+          // console.log ( "RES.DATA===> ",res.data.data)
+       
         })
+        .catch(err => {
+          if (err.response) {
+            console.log("ERROR ==> .catch => err.response===>",err.response)
+          } else if (err.request) {
+            console.log("ERROR ==> .catch => err.request===>",err.request)
+          } else {
+            console.log("ERROR ==> .catch => else===>",error)
+          }
+          
+      })
     }
-  
+
+
     render() {
-     const {imgList} = this.state;
-     return (
+      const images = this.state.imgList.map(function(name,id) {
+        return (
+          <View key={id} style={styles.card}> 
+            <Text style={styles.title}> {name.title} </Text> 
+            <Text style={styles.byUser}> by {name.account_url} </Text>  
+            <Image
+              source={{ uri: name.link }}
+              style={{ width: 200, height: 200 }}
+              PlaceholderContent={<ActivityIndicator />}
+            />
+            <View style={flex:1}>
+              <Text>{name.views} views</Text>
+              <Text>{name.points} points</Text>
+            </View>
+          </View>
+
+         
+        )
+      });
+      // console.log("render() ==> this.state.imgList:", this.state.imgList)
+      return (
          <View>
-      
-            { 
-            imgList.map(img => <Text>{img.title}</Text>)
-            }
-        
+            <Text h1>Home page</Text>
+            <View>{images}</View>
+            <Text>(end of list)</Text>
+            
         </View>
       )
     }
   }
 
-// =========================== T E S T ==================================== //
-// const auth:"0e5e6710ac6c131800f1dbc844a6f8759187b78b"
-// export default function Home() {
-
-//     function getImgFromImgur() {
-//         return fetch('https://reactnative.dev/picture.json',{
-//             method: 'GET',
-//             headers: {
-//                 Authorization : auth
-//             })
-//           .then((response) => response.json())
-//           .then((json) => {
-//             return json.picture;
-//           })
-//           .catch((error) => {
-//             console.error(error);
-//           });
-//       }
-
-//         return (
-//             <View>
-//                 <Text>All images</Text>
-//             </View>
-//           );
+  // ======================================= S T Y L E ====================================== //
+const styles = StyleSheet.create({
+  card: {
+    // flex: 1,
+    alignItems: 'center',
+    width : WIDTH,
+    marginTop: 12,
+    padding: 12,
+    borderRadius: 8,
     
-// }
+    backgroundColor: "#eaeaea",
+    borderColor:'red',
+  },
+  title:{
+    fontSize:15,
+    // color:"black",
+
+  },
+  byUser:{
+    fontSize:7,
+    // color: "red",
+
+  }
+})

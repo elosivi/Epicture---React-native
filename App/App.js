@@ -3,11 +3,14 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Header } from 'react-native-elements';
+import LinearGradient from 'react-native-linear-gradient';
 
 import Home from './Home';
-import OAuth from './OAuth'
+import OAuth from './OAuth';
+// import Test from './test'
 
-function Feed() {
+function HomePage() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Home/>
@@ -18,15 +21,15 @@ function Feed() {
 function Profile() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text><OAuth /></Text>
+        <OAuth/> 
     </View>
   );
 }
 
-function Notifications() {
+function Favorites() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>view 2 !</Text>
+      <Text>My favorites</Text>
     </View>
   );
 }
@@ -36,7 +39,7 @@ const Tab = createMaterialBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Feed"
+      initialRouteName="HomePage"
       activeColor="#F7FAFA"
       inactiveColor="#1F3451"
       barStyle={{ backgroundColor: '#5B738F' }}
@@ -44,8 +47,8 @@ function MyTabs() {
       style={{ backgroundColor: '#7AC3B0' }}
     >
       <Tab.Screen
-        name="Feed"
-        component={Feed}
+        name="HomePage"
+        component={HomePage}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
@@ -54,10 +57,10 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="Favorites"
+        component={Favorites}
         options={{
-          tabBarLabel: 'Option2',
+          tabBarLabel: 'Favorites',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="heart" color={color} size={26} />
           ),
@@ -67,7 +70,7 @@ function MyTabs() {
         name="Profile"
         component={Profile}
         options={{
-          tabBarLabel: 'Option3',
+          tabBarLabel: 'My Profile',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="account" color={color} size={26} />
           ),
@@ -79,8 +82,18 @@ function MyTabs() {
 
 export default function Nav() {
   return (
+  //   <Header
+  // ViewComponent={LinearGradient} // Don't forget this!
+  // linearGradientProps={{
+  //   colors: ['red', 'pink'],
+  //   start: { x: 0, y: 0.5 },
+  //   end: { x: 1, y: 0.5 },
+  // }}
+// />
+   
     <NavigationContainer>
       <MyTabs />
     </NavigationContainer>
+   
   );
 }
