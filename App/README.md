@@ -15,10 +15,10 @@ Get data from API : render some photos and infos
 Navigate with a navbar
 Add some design
 
-![alt text](https://github.com/elosivi/Epicture/blob/App/img/View_Profile.PNG?raw=true)
-![alt text](https://github.com/elosivi/Epicture/blob/App/img/authExpo.PNG?raw=true)
-![alt text](https://github.com/elosivi/Epicture/blob/App/img/authExpo2.PNG?raw=true)
-![alt text](https://github.com/elosivi/Epicture/blob/App/img/renderList.PNG?raw=true)
+![alt text](https://github.com/elosivi/Epicture/App/img/View_Profile.PNG?raw=true)
+![alt text](https://github.com/elosivi/Epicture/App/img/authExpo.PNG?raw=true)
+![alt text](https://github.com/elosivi/Epicture/App/img/authExpo2.PNG?raw=true)
+![alt text](https://github.com/elosivi/Epicture/App/img/renderList.PNG?raw=true)
 
 **In progress**
 Stock token and other data in asyncStorage (or other localstorage) 
