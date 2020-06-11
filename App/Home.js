@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Text, View } from 'react-native';
 import axios from 'axios';
-import { ActivityIndicator,Dimensions,StyleSheet } from 'react-native';
+import { ActivityIndicator,Dimensions,StyleSheet,ScrollView, } from 'react-native';
 import { Image } from 'react-native-elements';
 
 
@@ -65,11 +65,13 @@ export default class ImgRequests extends React.Component {
     
       // console.log("render() ==> this.state.imgList:", this.state.imgList)
       return (
-        <View>
-            <Text h1>Home page</Text>
-            <View>{images}</View>
-            <Text>(end of list)</Text> 
-        </View>
+        <ScrollView>
+            <View>
+                <Text style={styles.pagetitle}>Last Posts...</Text>
+                <View>{images}</View>
+                <Text>(end of list)</Text>
+            </View>
+        </ScrollView>
       )
     }
 }

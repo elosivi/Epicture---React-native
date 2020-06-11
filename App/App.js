@@ -19,7 +19,7 @@ function HomePage() {
 function Profile() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-       <Text>My favorites</Text> 
+       <OAuth/> 
     </View>
   );
 }
