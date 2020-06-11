@@ -1,4 +1,4 @@
 # Epicture
 REACT-Native, creation of a crossplatform app like "instagram", with API Imgur
 
-cd App/README.md
+please cf : App/README.md
