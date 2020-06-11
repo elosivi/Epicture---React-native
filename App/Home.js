@@ -55,26 +55,24 @@ export default class ImgRequests extends React.Component {
               style={{ width: 200, height: 200 }}
               PlaceholderContent={<ActivityIndicator />}
             />
-            <View style={flex:1}>
+            <View style={{flex:1}}>
               <Text>{name.views} views</Text>
               <Text>{name.points} points</Text>
             </View>
           </View>
-
-         
         )
       });
+    
       // console.log("render() ==> this.state.imgList:", this.state.imgList)
       return (
-         <View>
+        <View>
             <Text h1>Home page</Text>
             <View>{images}</View>
-            <Text>(end of list)</Text>
-            
+            <Text>(end of list)</Text> 
         </View>
       )
     }
-  }
+}
 
   // ======================================= S T Y L E ====================================== //
 const styles = StyleSheet.create({
